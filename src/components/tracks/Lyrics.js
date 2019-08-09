@@ -34,6 +34,7 @@ class Lyrics extends Component {
         ) {
             return <Spinner />;
         } else {
+            console.log();
             return (
                 <Fragment>
                     <Link to="/" className="btn btn-dark btn-sm mb-4">
@@ -42,7 +43,10 @@ class Lyrics extends Component {
                     </Link>
                     <div className="card">
                         <h4 className="card-header bg-primary text-white">
-                            { track.track_name }  by <span className="text-secondary">{ track.artist_name }</span>
+                            <i className="fas fa-music mr-2" />
+                            { track.track_name }  by
+                            <i className="fas fa-user mx-2" />
+                            <span className="text-secondary">{ track.artist_name }</span>
                         </h4>
                         <div className="card-body">
                             <p className="card-text">{ lyrics.lyrics_body }</p>
@@ -52,14 +56,15 @@ class Lyrics extends Component {
                     <ul className="list-group mt-3">
                         <li className="list-group-item">
                             <strong>Song Genre</strong>:
-                            { track.primary_genres.music_genre_list[0].music_genre.music_genre_name }
+                            { track.primary_genres.music_genre_list.length !== 0
+                                ? track.primary_genres.music_genre_list[0].music_genre.music_genre_name
+                                : 'unknown'}
                         </li>
                         <li className="list-group-item">
                             <strong>Explicit Words</strong>: { track.explicit === 0 ? 'No' : 'Yes' }
                         </li>
                         <li className="list-group-item">
-                            <strong>Release Date</strong>:
-                            <Moment format="MM/DD/YYYY">{ track.first_release_date }</Moment>
+                            <strong>Release Date</strong>: <Moment format="MM/DD/YYYY">{ track.first_release_date }</Moment>
                         </li>
                     </ul>
                 </Fragment>

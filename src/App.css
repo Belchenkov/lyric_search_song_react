@@ -11,3 +11,11 @@ body {
     color: #fff;
     font-size: 1.8rem;
 }
+
+.search-block {
+    font-family: 'Courgette', cursive;
+}
+
+.bg-gray {
+    background: #e2e2e2;
+}
