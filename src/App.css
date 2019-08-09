@@ -12,10 +12,14 @@ body {
     font-size: 1.8rem;
 }
 
-.search-block {
+.search-header {
     font-family: 'Courgette', cursive;
 }
 
 .bg-gray {
     background: #e2e2e2;
+}
+
+.btn-search {
+    font-family: 'Blinker', sans-serif;
 }
